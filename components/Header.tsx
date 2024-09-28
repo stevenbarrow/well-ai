@@ -8,7 +8,7 @@ function Header() {
   return (
     <div className="flex justify-between bg-white shadow-sm p-5 border-b">
       <Link href="/dashboard" className="text-2xl">
-        Chat to <span className="text-indigo-600">PDF</span>
+        Drilling <span className="text-indigo-600">AI</span>
       </Link>
 
       <SignedIn>
@@ -16,7 +16,7 @@ function Header() {
           <ThemeToggler/>
 
           <Button asChild variant="outline">
-            <Link href="/dashboard">My Documents</Link>
+            <Link href="/dashboard">My Wells</Link>
           </Button>
 
           <Button asChild variant="outline" className="border-indigo-600">
