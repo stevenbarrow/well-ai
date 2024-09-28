@@ -1,101 +1,128 @@
+import { Button } from "@/components/ui/button";
+import {
+  BrainCogIcon,
+  EyeIcon,
+  GlobeIcon,
+  MonitorSmartphoneIcon,
+  ServerCogIcon,
+  ZapIcon,
+} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+
+const features = [
+  {
+    name: "Instant Expertise at Your Fingertips",
+    description:
+      "Forget the days of flipping through stacks of paper to find one crucial detail. With ProcedurePal, every procedure is just a question away. Ask anything, and get precise answers instantly—turning every operator into an instant expert.",
+    icon: GlobeIcon,
+  },
+  {
+    name: "Dynamic Learning Experience",
+    description:
+      "Static is out; dynamic is in. Our technology does more than just display your procedures; it breathes life into them. Engage with your documents like never before—interactive and responsive, ensuring you not only read but understand and master your tasks.",
+    icon: ZapIcon,
+  },
+  {
+    name: "Tailored Insights, Unmatched Precision",
+    description:
+      "Why settle for one-size-fits-all answers when you can have insights tailor-made for your specific needs? ProcedurePal understands the context of your questions, offering solutions and suggestions that are as unique as your operational challenges.",
+    icon: BrainCogIcon,
+  },
+  {
+    name: "Reduce Training Time, Amplify Efficiency",
+    description:
+      "Speed through training with a tool that teaches as you use it. ProcedurePal slashes learning curves and training time, dramatically amplifying operational efficiency and productivity across the board.",
+    icon: EyeIcon,
+  },
+  {
+    name: "Always-On Assistant",
+    description:
+      "Whether you need a mid-shift query or a refresher on a rarely used procedure, your digital companion is always on, 24/7. Just like having a trainer available at all times, but without the need for scheduling or waiting.",
+    icon: ServerCogIcon,
+  },
+  {
+    name: "Empowerment Through Innovation",
+    description:
+      "Empower your team with more than just a tool; give them an innovation. ProcedurePal elevates everyday operations, transforming routine tasks into opportunities for continuous learning and professional growth.",
+
+    icon: MonitorSmartphoneIcon,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="flex-1 overflow-scroll p-2 lg:p-5 bg-gradient-to-bl from-white to-indigo-600">
+      <div className="bg-white py-24 sm:py-32 rounded-md drop-shadow-xl">
+        <div className="flex flex-col justify-center items-center mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl sm:text-center">
+            <h2 className="text-base font-semibold leading-7 text-indigo-600">
+              Your Interactive Procedure Partner
+            </h2>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+              Transform Your Procedures into Engaging Dialogues
+            </p>
+
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Introducing{" "}
+              <span className="font-bold text-indigo-600">ProcedurePal.</span>
+              <br />
+              <br /> 
+              <span className="font-bold text-indigo-600">Step 1: </span>
+              Upload your operating procedures
+              <br/>
+              <span className="font-bold text-indigo-600">Step 2: </span>
+              Ask our AI assistant anything you want about the procedure
+              <br/>
+              <span className="font-bold text-indigo-600">Step 3: </span>
+              Enjoy the feeling of being 10x more efficient
+              <br/>
+              Ideal for anyone in operations, <span className="text-indigo-600">
+                ProcedurePal
+              </span>{" "}
+              makes static procedures a thing of the past, turning them into{" "}
+              <span className="font-bold">dynamic, engaging conversations</span>.
+            </p>
+          </div>
+
+          <Button asChild className="mt-10">
+            <Link href="/dashboard">Get Started</Link>
+          </Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <div className="relative overflow-hidden pt-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <Image
+              alt="App screenshot"
+              src="https://static.wixstatic.com/media/6d8ffc_591befbdf8a44f8ea14a1db4af557673~mv2.png"
+              width={2432}
+              height={1442}
+              className="mb-[-0%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
+            />
+            <div aria-hidden="true" className="relative">
+              <div className="absolute bottom-0 -inset-x-32 bg-gradient-to-t from-white/95 pt-[5%]" />
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
+          <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+            {features.map((feature) => (
+              <div key={feature.name} className="relative pl-9">
+                <dt className="inline font-semibold text-gray-900">
+                  <feature.icon
+                    aria-hidden="true"
+                    className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+                  />
+                </dt>
+
+                <dd>{feature.description}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+    </main>
   );
 }
